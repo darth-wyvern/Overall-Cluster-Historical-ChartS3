@@ -1,57 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React from "react";
+import { Box, Flex } from "@chakra-ui/react";
+import Header from './Components/Header';
+import Historical from './Components/Historical';
+import OverAll from './Components/OverAll';
+import Cluster from './Components/Cluster';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <Box bg='#011a2f'>
+      <Header />
+      <Flex maxWidth='100vw' gap={4} color={'white'} p='2.5vh 2vh' flexDir='column'>
+        <Historical />
+        <Box bg="#092d4a" p={{ base: '1rem', sm: '2rem' }} borderRadius={8}>
+          <OverAll />
+          <Cluster />
+        </Box>
+      </Flex>
+    </Box>
   );
 }
 
