@@ -1,9 +1,12 @@
 import { Box, Button, Flex, Select } from '@chakra-ui/react';
 import React from 'react';
-import Cluster1 from '../Charts/Cluster1Chart';
-import Cluster2 from '../Charts/Cluster2Chart';
+import ClusterHighChart from '../Charts/ClusterHighChart';
+import { cluster1, cluster2 } from '../data/clusterData';
 
 export default function Cluster() {
+
+  const data = [cluster1, cluster2];
+
   return (<Box fontSize='18pt'>
     <Flex justifyContent='space-between' padding='1rem 0' alignItems='center'>
       <Box fontSize='18pt' fontWeight={777}>Cluster</Box>
@@ -19,14 +22,14 @@ export default function Cluster() {
           <Box fontSize='15pt'>Cluster 1</Box>
           <Button colorScheme='teal' size='lg'>View Detail</Button>
         </Flex>
-        <Box><Cluster1 /></Box>
+        <Box style={{ paddingLeft: '1rem' }}><ClusterHighChart data={data[0]} color='#466fd8' /></Box>
       </Box>
       <Box borderWidth={1} flex='1' borderRadius={8} borderColor='#21467a'>
         <Flex m='1.5rem' justifyContent='space-between' alignItems='center' marginBottom={0}>
           <Box fontSize='15pt'>Cluster 1</Box>
           <Button colorScheme='teal' size='lg'>View Detail</Button>
         </Flex>
-        <Box><Cluster2 /></Box>
+        <Box style={{ paddingLeft: '1rem' }}><ClusterHighChart data={data[1]} color='#ff577d' /></Box>
       </Box>
     </Flex>
   </Box>)
